@@ -4,6 +4,7 @@ import ProjectSlider from '../components/ProjectSlider';
 import Testimonials from '../components/Testimonials';
 import { motion } from 'framer-motion';
 import profileImg from '../assets/profile.jpg';
+import resume from '../assets/resume.pdf';
 
 const SectionWrapper = ({ children, id, title, subtitle }) => (
     <div id={id} className="section-padding">
@@ -86,7 +87,9 @@ const Home = () => {
                             </p>
 
                             <div className="action-buttons" style={{ display: 'flex', gap: '1rem' }}>
-                                <button
+                                <a
+                                    href={resume}
+                                    download="Aadil_Resume.pdf"
                                     style={{
                                         padding: '1rem 2.5rem',
                                         fontSize: '1rem',
@@ -97,14 +100,17 @@ const Home = () => {
                                         cursor: 'pointer',
                                         fontWeight: 'bold',
                                         boxShadow: '0 4px 15px rgba(145, 94, 255, 0.4)',
-                                        transition: 'all 0.3s'
+                                        transition: 'all 0.3s',
+                                        textDecoration: 'none',
+                                        display: 'inline-flex',
+                                        alignItems: 'center',
+                                        justifyContent: 'center'
                                     }}
                                     onMouseOver={e => { e.currentTarget.style.transform = 'translateY(-2px)'; e.currentTarget.style.boxShadow = '0 6px 20px rgba(145, 94, 255, 0.6)'; }}
                                     onMouseOut={e => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.boxShadow = '0 4px 15px rgba(145, 94, 255, 0.4)'; }}
-                                    onClick={() => document.getElementById('work').scrollIntoView({ behavior: 'smooth' })}
                                 >
-                                    View Projects
-                                </button>
+                                    Download CV
+                                </a>
                                 <button
                                     style={{
                                         padding: '1rem 2.5rem',
